@@ -18,9 +18,9 @@ class Users extends PdoManager
 
         if ($res) {
             $_SESSION["user"] = $res;
-            return true;
+            return $res;
         } else {
-            return false;
+            return $res;
         }
     }
 

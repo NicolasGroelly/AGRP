@@ -37,7 +37,11 @@ if ($_POST) {
     </form>
 
 </div>
-
+<?php
+print_r($_SESSION);
+print_r($_POST);
+print_r($user->login($_POST[username], $_POST[password]));
+?>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
