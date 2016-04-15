@@ -14,10 +14,10 @@ class Users extends PdoManager
         $req->bindValue("password", $password);
         $req->execute();
 
-        $res = $req->fetchObject();
+        $res = $req->fetch();
 
         if ($res) {
-            $_SESSION["user"] = $res[0];
+            $_SESSION["user"] = $res;
             return true;
         } else {
             return false;
