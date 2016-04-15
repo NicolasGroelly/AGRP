@@ -4,7 +4,7 @@ require_once "required.php";
 
 if ($_POST) {
     if ($user->login($_POST[username], $_POST[password])) {
-        header();
+        header('Location: index.php');
     } else {
         $error = "Identifiants inconnue";
     }
@@ -17,9 +17,7 @@ if ($_POST) {
     <title>AGRP | Login</title>
     <meta name="author" content="Nicolas Groelly">
 
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
     <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.min.css" />
 </head>
 
@@ -31,7 +29,7 @@ if ($_POST) {
         Identifiants inconnues
     </div>
 <?php endif; ?>
-    <form class="form-signin" action="login.php">
+    <form class="form-signin" action="login.php" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" class="input-block-level" placeholder="Username" name="username">
         <input type="password" class="input-block-level" placeholder="Password" name="password">
@@ -40,8 +38,6 @@ if ($_POST) {
 
 </div>
 
-
-<script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>

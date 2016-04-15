@@ -1,3 +1,11 @@
+<?php
+session_start();
+require_once "required.php";
+
+if (!$_SESSION["user"]) {
+    header('Location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,9 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Nicolas Groelly">
 
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
     <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.min.css" />
 </head>
 
@@ -41,7 +47,6 @@
 
 </div>
 
-<script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
