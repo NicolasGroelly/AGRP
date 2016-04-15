@@ -11,7 +11,7 @@ class PdoManager
 
     public function __construct()
     {
-        $dsn = "mysql:$this->host:$this->port;$this->database";
+        $dsn = "mysql:$this->host:$this->port;dbname=$this->database";
         try {
             $this->pdo = new PDO($dsn, $this->username, $this->password);
         } catch (PDOException $e) {
