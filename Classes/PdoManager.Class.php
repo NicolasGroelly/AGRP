@@ -12,11 +12,11 @@ class PdoManager
     public function __construct()
     {
         // $dsn = "mysql:host=" . $this->host . ":" . $this->port . ";dbname=" . $this->database;
-        $dsn = "mysql:host=127.0.0.1:3306;dbname=agrp";
+        $dsn = "mysql:host=localhost;dbname=agrp";
         try {
             $this->pdo = new PDO($dsn, $this->username, $this->password);
         } catch (PDOException $e) {
-            die("ERREUR PDOMANAGER");
+            die("ERREUR PDOMANAGER $e");
         }
     }
 }
