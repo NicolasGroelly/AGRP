@@ -7,7 +7,7 @@ class Users extends PdoManager
     
     public function login($username, $password)
     {
-        $password = sha1($password);
+        $password = hash("sha512", $password);
 
         $req = $this->pdo->prepare("SELECT * FROM 'users' WHERE 'id' = :id AND 'password' = :password");
         $req->bindValue("id", $username);
@@ -27,7 +27,7 @@ class Users extends PdoManager
     public function addUser($name, $firstname, $password)
     {
         $username = strtolower($firstname) . "." . strtolower($name);
-        $password = sha1($password);
+        $password = hash("sha512", $password);
 
         $req = $this->pdo->prepare("INSERT INTO 'users' ('id', 'name', 'firstname', 'password') VALUES (:id, :name, :firstname, :password)");
         $req->bindValue("id", $username);
