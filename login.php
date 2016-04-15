@@ -3,7 +3,7 @@ session_start();
 require_once "required.php";
 
 if ($_POST) {
-    if ($user->login($_POST[username], $_POST[password])) {
+    if ($user->login($_POST["username"], $_POST["password"])) {
         header('Location: index.php');
     } else {
         $error = "Identifiants inconnue";
