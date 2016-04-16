@@ -9,7 +9,7 @@ if (!$user->isUserLogged()) {
 
 $title = "Users";
 
-require_once "require/header.php";
+require_once "Require/header.php";
 ?>
 
     <h1>Users</h1>
@@ -36,5 +36,5 @@ require_once "require/header.php";
     </table>
 
 <?php
-require_once "require/footer.php";
+require_once "Require/footer.php";
 ?>

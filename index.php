@@ -9,12 +9,12 @@ if (!$user->isUserLogged()) {
 
 $title = "Home";
 
-require_once "require/header.php";
+require_once "Require/header.php";
 ?>
 
     <h1>Bootstrap starter template</h1>
     <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
 
 <?php
-require_once "require/footer.php";
+require_once "Require/footer.php";
 ?>
