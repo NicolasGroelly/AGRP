@@ -52,4 +52,11 @@ class Users extends PdoManager
         }
         return false;
     }
+
+    public function delete($id)
+    {
+        $req = $this->pdo->prepare("DELETE FROM users WHERE id = :id");
+        $req->bindValue("id", $id);
+        $req->execute();
+    }
 }

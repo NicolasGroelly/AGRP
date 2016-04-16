@@ -31,7 +31,7 @@ require_once "Require/header.php";
             <th scope="row"><?php echo $v["id"]; ?></th>
             <td><?php echo $v["name"]; ?></td>
             <td><?php echo $v["firstname"]; ?></td>
-            <td><a class="btn btn-info" href="#?<?php echo $v["id"]; ?>" role="button">Infos</a> <a class="btn btn-danger" href="#?<?php echo $v["id"]; ?>" role="button">Delete</a></td>
+            <td><a class="btn btn-info" href="#?<?php echo $v["id"]; ?>" role="button">Infos</a> <a class="btn btn-danger" href="deleteuser.php?id=<?php echo $v["id"]; ?>" role="button">Delete</a></td>
         </tr>
         <?php endforeach; ?>
         </tbody>

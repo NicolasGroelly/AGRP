@@ -36,4 +36,12 @@ class Plates extends PDOManager
 
         return false;
     }
+
+    public function changeAllow($plate, $allow)
+    {
+        $req = $this->pdo->prepare("UPDATE plates SET allow = :allow WHERE plate = :plate");
+        $req->bindValue("allow", $allow);
+        $req->bindValue("plate", $plate);
+        $req->execute();
+    }
 }
