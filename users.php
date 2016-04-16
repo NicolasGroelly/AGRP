@@ -27,9 +27,9 @@ require_once "Require/header.php";
         <?php foreach ($user->getAll() as $k => $v) : ?>
         <tr>
             <th scope="row"><?php echo $v["id"]; ?></th>
-            <th><?php echo $v["name"]; ?></th>
-            <th><?php echo $v["firstname"]; ?></th>
-            <th></th>
+            <td><?php echo $v["name"]; ?></td>
+            <td><?php echo $v["firstname"]; ?></td>
+            <td><a class="btn btn-info" href="#?<?php echo $v["id"]; ?>" role="button">Infos</a> <a class="btn btn-danger" href="#?<?php echo $v["id"]; ?>" role="button">Delete</a></td>
         </tr>
         <?php endforeach; ?>
         </tbody>
