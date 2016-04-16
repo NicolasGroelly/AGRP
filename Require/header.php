@@ -25,6 +25,7 @@
                 <ul class="nav">
                     <li class="active"><a href="index.php">Home</a></li>
                     <li><a href="plates.php">Plates</a></li>
+                    <li><a href="history.php">History</a></li>
                     <li><a href="users.php">Users</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
