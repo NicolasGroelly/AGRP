@@ -36,6 +36,5 @@ require_once "Require/header.php";
     </table>
 
 <?php
-print_r($history->getAll());
 require_once "Require/footer.php";
 ?>
