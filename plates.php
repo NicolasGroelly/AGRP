@@ -24,7 +24,7 @@ require_once "Require/header.php";
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($user->getAll() as $k => $v) : ?>
+        <?php foreach ($plate->getAll() as $k => $v) : ?>
             <tr>
                 <th scope="row"><?php echo $v["plate"]; ?></th>
                 <td><?php if ($plate->isAllow($v["plate"])) { echo "Yes"; } else { echo "No"; } ?></td>
