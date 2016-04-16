@@ -12,7 +12,7 @@ if (!$user->isUserLogged()) {
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>AGRP | Home</title>
+    <title>AGRP | Users</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Nicolas Groelly">
 
@@ -45,8 +45,26 @@ if (!$user->isUserLogged()) {
 <div class="container">
 
     <h1>Bootstrap starter template</h1>
-    <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
-
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Firstname</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($user->getAll() as $k => $v) : ?>
+        <tr>
+            <th scope="row"><?php echo $v["id"]; ?></th>
+            <th><?php echo $v["name"]; ?></th>
+            <th><?php echo $v["firstname"]; ?></th>
+            <th></th>
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>

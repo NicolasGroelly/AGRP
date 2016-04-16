@@ -14,7 +14,7 @@ class Users extends PdoManager
         $req->bindValue("password", $password);
         $req->execute();
 
-        $res = $req->fetch();
+        $res = $req->fetch(PDO::FETCH_ASSOC);
 
         if ($res) {
             $_SESSION["user"] = $res;
@@ -35,5 +35,21 @@ class Users extends PdoManager
         $req->bindValue("firstname", $firstname);
         $req->bindValue("password", $password);
         $req->execute();
+    }
+
+    public function getAll()
+    {
+        $req = $this->pdo->prepare("SELECT * FROM users");
+        $req->execute();
+
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function isUserLogged()
+    {
+        if ($_SESSION["user"]) {
+            return true;
+        }
+        return false;
     }
 }

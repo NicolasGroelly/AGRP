@@ -1,6 +1,11 @@
 <?php
 session_start();
+
 require_once "required.php";
+
+if (!$user->isUserLogged()) {
+    header('Location: login.php');
+}
 
 if ($_POST) {
     $user->addUser($_POST["name"], $_POST["firstname"], $_POST["password"]);
@@ -43,15 +48,10 @@ if ($_POST) {
 <div class="container">
 
     <h1>Add new user</h1>
-    <?php if ($error) : ?>
-        <div class="alert alert-error">
-            Identifiants inconnues
-        </div>
-    <?php endif; ?>
     <form class="form-signin" action="adduser.php" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Username" name="name">
-        <input type="text" class="input-block-level" placeholder="Username" name="firstname">
+        <h2 class="form-signin-heading">Add new user</h2>
+        <input type="text" class="input-block-level" placeholder="Name" name="name">
+        <input type="text" class="input-block-level" placeholder="Firstname" name="firstname">
         <input type="password" class="input-block-level" placeholder="Password" name="password">
         <button class="btn btn-large btn-primary" type="submit">Add</button>
     </form>

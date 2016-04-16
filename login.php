@@ -1,12 +1,17 @@
 <?php
 session_start();
+
 require_once "required.php";
+
+if ($user->isUserLogged()) {
+    header('Location: index.php');
+}
 
 if ($_POST) {
     if ($user->login($_POST["username"], $_POST["password"])) {
         header('Location: index.php');
     } else {
-        $error = "Identifiants inconnue";
+        $error = "Deny";
     }
 }
 
@@ -26,7 +31,7 @@ if ($_POST) {
 <div class="container">
 <?php if ($error) : ?>
     <div class="alert alert-error">
-        Identifiants inconnues
+        Deny
     </div>
 <?php endif; ?>
     <form class="form-signin" action="login.php" method="post">
@@ -37,11 +42,7 @@ if ($_POST) {
     </form>
 
 </div>
-<?php
-print_r($_SESSION);
-print_r($_POST);
-print_r($user->login($_POST[username], $_POST[password]));
-?>
+
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
