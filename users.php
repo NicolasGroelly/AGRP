@@ -14,6 +14,8 @@ require_once "Require/header.php";
 
     <h1>Users</h1>
 
+    <a class="btn btn-primary" href="adduser.php" role="button">Add user</a>
+
     <table class="table table-hover">
         <thead>
         <tr>

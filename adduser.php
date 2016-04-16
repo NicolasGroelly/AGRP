@@ -8,7 +8,7 @@ if (!$user->isUserLogged()) {
 }
 
 if ($_POST) {
-    $user->addUser($_POST["name"], $_POST["firstname"], $_POST["password"]);
+    $user->add($_POST["name"], $_POST["firstname"], $_POST["password"]);
 }
 
 $title = "Add user";

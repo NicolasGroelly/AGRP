@@ -4,7 +4,7 @@ require_once "PdoManager.Class.php";
 //
 class Plates extends PDOManager
 {
-    public function addPlate($plate, $allow)
+    public function add($plate, $allow)
     {
         $req = $this->pdo->prepare("INSERT INTO plates (plate, allow) VALUES (:plate, :allow)");
         $req->bindValue("plate", $plate);

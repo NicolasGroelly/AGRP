@@ -24,7 +24,7 @@ class Users extends PdoManager
         }
     }
 
-    public function addUser($name, $firstname, $password)
+    public function add($name, $firstname, $password)
     {
         $username = strtolower($firstname) . "." . strtolower($name);
         $password = hash("sha512", $password);
