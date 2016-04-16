@@ -9,7 +9,7 @@ class Users extends PdoManager
     {
         $password = hash("sha512", $password);
 
-        $req = $this->pdo->prepare("SELECT * FROM 'users' WHERE 'id' = :id AND 'password' = :password");
+        $req = $this->pdo->prepare("SELECT * FROM users WHERE id = :id AND password = :password");
         $req->bindValue("id", $username);
         $req->bindValue("password", $password);
         $req->execute();
@@ -18,9 +18,9 @@ class Users extends PdoManager
 
         if ($res) {
             $_SESSION["user"] = $res;
-            return $res;
+            return true;
         } else {
-            return $res;
+            return false;
         }
     }
 
@@ -29,7 +29,7 @@ class Users extends PdoManager
         $username = strtolower($firstname) . "." . strtolower($name);
         $password = hash("sha512", $password);
 
-        $req = $this->pdo->prepare("INSERT INTO 'users' ('id', 'name', 'firstname', 'password') VALUES (:id, :name, :firstname, :password)");
+        $req = $this->pdo->prepare("INSERT INTO users (id, name, firstname, password) VALUES (:id, :name, :firstname, :password)");
         $req->bindValue("id", $username);
         $req->bindValue("name", $name);
         $req->bindValue("firstname", $firstname);
