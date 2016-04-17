@@ -19,7 +19,7 @@ class History extends PdoManager
         echo "---";
         $datas = ob_get_contents();
         ob_end_clean();
-        file_put_contents("txt/" . time() . ".txt", $datas);
+        file_put_contents("plates.txt", $datas);
 /*        $req = $this->pdo->prepare("INSERT INTO history (plate, plate_0, plate_1, plate_2, plate_3, plate_4, plate_5, plate_6, plate_7, plate_8, plate_9, status, image) VALUES (:plate, :plate_0, :plate_1, :plate_2, :plate_3, :plate_4, :plate_5, :plate_6, :plate_7, :plate_8, :plate_9, :status, :image)");
         $req->bindValue("plate", $datas["results"]["0"]["plate"]);
         $req->bindValue("plate_0", $datas["results"]["0"]["candidates"]["0"]["plate"]);
