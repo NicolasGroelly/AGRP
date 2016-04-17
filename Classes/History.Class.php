@@ -12,14 +12,13 @@ class History extends PdoManager
         return $req->fetchAll(PDO::FETCH_ASSOC);
     }
 
-/*    public function add($datas, $allow)
+    public function add($datas, $allow)
     {
-        ob_start();
-        print_r($datas);
-        $datas = ob_get_contents();
-        ob_end_clean();
-        file_put_contents("plates.txt", $datas);
-        $req = $this->pdo->prepare("INSERT INTO history (plate, plate_0, plate_1, plate_2, plate_3, plate_4, plate_5, plate_6, plate_7, plate_8, plate_9, status, image) VALUES (:plate, :plate_0, :plate_1, :plate_2, :plate_3, :plate_4, :plate_5, :plate_6, :plate_7, :plate_8, :plate_9, :status, :image)");
+        $req = $this->pdo->prepare("
+                  INSERT INTO history 
+                  (plate, plate_0, plate_1, plate_2, plate_3, plate_4, plate_5, plate_6, plate_7, plate_8, plate_9, status, image)
+                  VALUES (:plate, :plate_0, :plate_1, :plate_2, :plate_3, :plate_4, :plate_5, :plate_6, :plate_7, :plate_8, :plate_9, :status, :image)
+               ");
         $req->bindValue("plate", $datas["results"]["0"]["plate"]);
         $req->bindValue("plate_0", $datas["results"]["0"]["candidates"]["0"]["plate"]);
         $req->bindValue("plate_1", $datas["results"]["0"]["candidates"]["1"]["plate"]);
@@ -35,8 +34,8 @@ class History extends PdoManager
         $req->bindValue("image", $datas["uuid"] . ".jpg");
         $req->execute();
     }
-*/
-    public function add($datas, $allow)
+
+/*    public function add($datas, $allow)
     {
         ob_start();
         print_r($datas);
@@ -45,5 +44,5 @@ class History extends PdoManager
         $req = $this->pdo->prepare("INSERT INTO test (datas) VALUES (:datas)");
         $req->bindValue("datas", $datas);
         $req->execute();
-    }
+    }*/
 }
