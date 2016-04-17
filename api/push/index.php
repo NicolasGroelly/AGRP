@@ -1,6 +1,6 @@
 <?php
 $datas = file_get_contents('php://input');
-$datas = json_decode($datas);
+$datas = json_decode($datas, true);
 
 $plates = $datas["results"]["0"];
 
