@@ -29,7 +29,7 @@ require_once "Require/header.php";
             <tr class="<?php if ($v["status"] == 1) { echo "success"; } else { echo "alert-danger"; } ?>">
                 <td><?php $d = date_parse($v["timestamp"]); echo $d["day"] . "/" . $d["month"] . "/" . $d["year"]; ?></td>
                 <td><?php echo $d["hour"] . ":" . $d["minute"]; ?></td>
-                <td><?php echo $v["plate_0"]; ?></td>
+                <td><?php echo $v["plate"]; ?></td>
                 <td><?php if ($v["status"] == 1) : ?>Allow<?php else : ?>Deny<?php endif; ?></td>
                 <td><a class="btn btn-info" href="#?<?php echo $v["image"]; ?>" role="button">Show image</a></td>
             </tr>

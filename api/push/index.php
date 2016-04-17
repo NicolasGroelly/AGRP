@@ -19,7 +19,7 @@ foreach ($plates["candidates"] as $k => $v) {
         $allow = 1;
         $p = $i;
     }
-    i = i++;
+    $i++;
 }
 
 
