@@ -16,7 +16,6 @@ class History extends PdoManager
     {
         ob_start();
         print_r($datas);
-        echo "---";
         $datas = ob_get_contents();
         ob_end_clean();
         file_put_contents("plates.txt", $datas);
