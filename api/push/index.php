@@ -5,7 +5,7 @@ $datas = json_decode($datas, true);
 $plates = $datas["results"]["0"];
 
 $ip = "10.255.0.2";
-$url = "http://admin:admin@" . $ip . "/status.xml?pl1=1";
+$url = "http://" . $ip . "/status.xml?pl1=1";
 
 $allow = 0;
 
