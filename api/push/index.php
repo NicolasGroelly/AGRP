@@ -30,7 +30,7 @@ if ($allow == 1) {
     curl_close($curl);
 } else {
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, "http://" . $ip . "/status.xml?pl3=1&pl1=0&pl2=0");
+    curl_setopt($curl, CURLOPT_URL, "http://" . $ip . "/status.xml?pl3=1&r1=0&r2=0");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_exec($curl);
     curl_close($curl);
