@@ -31,7 +31,7 @@ require_once "Require/header.php";
                 <td><?php echo $d["hour"] . ":" . $d["minute"]; ?></td>
                 <td><?php echo $v["plate_0"]; ?></td>
                 <td><?php if ($v["status"] == 1) : ?>Allow<?php else : ?>Deny<?php endif; ?></td>
-                <td><a class="btn btn-info" href="#?<?php echo $v["uuid"]; ?>" role="button">Show image</a></td>
+                <td><a class="btn btn-info" href="#?<?php echo $v["image"]; ?>" role="button">Show image</a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
