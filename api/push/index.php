@@ -1,5 +1,5 @@
 <?php
-$dates = file_get_contents('php://input');
+$datas = file_get_contents('php://input');
 $datas = json_decode($datas);
 
 $plates = $datas["results"]["0"];
