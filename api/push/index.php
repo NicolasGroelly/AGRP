@@ -24,13 +24,21 @@ foreach ($plates["candidates"] as $k => $v) {
 
 if ($allow == 1) {
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, "http://" . $ip . "/status.xml?pl1=1&pl2=1&r3=0");
+    curl_setopt($curl, CURLOPT_URL, "http://" . $ip . "/status.xml?pl1=1&r2=1&r3=0");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_exec($curl);
+    sleep(5);
+    curl_setopt($curl, CURLOPT_URL, "http://" . $ip . "/status.xml?r2=0&r3=0");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_exec($curl);
     curl_close($curl);
 } else {
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, "http://" . $ip . "/status.xml?pl3=1&r1=0&r2=0");
+    curl_setopt($curl, CURLOPT_URL, "http://" . $ip . "/status.xml?r3=1&r2=0");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_exec($curl);
+    sleep(5);
+    curl_setopt($curl, CURLOPT_URL, "http://" . $ip . "/status.xml?r2=0&r3=0");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_exec($curl);
     curl_close($curl);
