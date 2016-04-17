@@ -28,7 +28,8 @@ class History extends PdoManager
 //        $req->bindValue("plate_8", $datas["results"]["0"]["candidates"]["8"]["plate"]);
 //        $req->bindValue("plate_9", $datas["results"]["0"]["candidates"]["9"]["plate"]);
         $req->bindValue("allow", $allow);
-        $req->bindValue("image", $datas["uuid"] . ".jpg");
+        $image = $datas["uuid"] . ".jpg";
+        $req->bindValue("image", $image);
         $req->execute();
     }
 }
