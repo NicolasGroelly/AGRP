@@ -30,19 +30,8 @@ class History extends PdoManager
         $req->bindValue("plate_7", $datas["results"]["0"]["candidates"]["7"]["plate"]);
         $req->bindValue("plate_8", $datas["results"]["0"]["candidates"]["8"]["plate"]);
         $req->bindValue("plate_9", $datas["results"]["0"]["candidates"]["9"]["plate"]);
-        $req->bindValue("allow", $allow);
+        $req->bindValue("status", $allow);
         $req->bindValue("image", $datas["uuid"] . ".jpg");
         $req->execute();
     }
-
-/*    public function add($datas, $allow)
-    {
-        ob_start();
-        print_r($datas);
-        $datas = ob_get_contents();
-        ob_end_clean();
-        $req = $this->pdo->prepare("INSERT INTO test (datas) VALUES (:datas)");
-        $req->bindValue("datas", $datas);
-        $req->execute();
-    }*/
 }
