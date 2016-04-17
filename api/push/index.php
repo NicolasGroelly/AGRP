@@ -11,15 +11,17 @@ $allow = 0;
 
 require_once "../../required.php";
 
-if ($plate->isAllow($plates["plate"])) {
-    $allow = 1;
-} else {
-    foreach ($plates["candidates"] as $k => $v) {
-        if ($plate->isAllow($v["plate"])) {
-            $allow = 1;
-        }
+$i = 0;
+$p = 0;
+
+foreach ($plates["candidates"] as $k => $v) {
+    if ($plate->isAllow($v["plate"])) {
+        $allow = 1;
+        $p = $i;
     }
+    i = i++;
 }
+
 
 if ($allow == 1) {
   $curl = curl_init();
@@ -29,4 +31,4 @@ if ($allow == 1) {
   curl_close($curl);
 } 
 
-$history->add($datas, $allow);
+$history->add($datas, $allow, $p);
