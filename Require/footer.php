@@ -1,5 +1,8 @@
 </div>
 
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="/zoombox/zoombox.js"></script>
 
 <script type="text/javascript">
     jQuery(function($){
@@ -15,8 +18,5 @@
             });
     });
 </script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="/zoombox/zoombox.js"></script>
 </body>
 </html>
