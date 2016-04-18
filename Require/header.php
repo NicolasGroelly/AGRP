@@ -8,7 +8,7 @@
 
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-    <link href="/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="css/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 
 <body>
